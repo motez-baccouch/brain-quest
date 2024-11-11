@@ -1,0 +1,30 @@
+<div class="quiz-score">
+    <h2>Score: {{ score }}</h2>
+  </div>
+
+<div class="quiz-container">
+    <div class="quiz-image">
+      <img src="assets/mammut.jpg" alt="Quiz Image" />
+    </div>
+  
+    <!-- Right Side: Quiz Content -->
+    <div class="quiz-content">
+      <h3>{{ questions[questionIndex].question }}</h3>
+      <form>
+        @for(option of questions[questionIndex].options ; track option){
+        <div 
+             [ngClass]="{
+               'quiz-option': true,
+               'correct': selectedOption && isCorrect && option === selectedOption,
+               'incorrect': selectedOption && !isCorrect && option === selectedOption
+             }"
+             (click)="!selectedOption && selectOption(option)">
+          <label>
+            <span>{{ option }}</span>
+          </label>
+        </div>
+    }
+      </form>
+    </div>
+  </div>
+  
