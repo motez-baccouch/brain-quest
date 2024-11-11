@@ -1,0 +1,19 @@
+
+<div class="wheel-container" *ngIf="!showQRCode">
+    <p class="congratulation-text">Herzlichen Glückwunsch, Champion! Du hast gewonnen! Drücke das Rad, um deinen Preis zu sehen.</p>
+    <div class="wheel" [style.transform]="wheelRotation" (click)="spinWheel()">
+      <div class="segment" *ngFor="let option of options; let i = index" [ngStyle]="getSegmentStyle(i)">
+        <span>{{ option }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="result-container" *ngIf="showQRCode">
+    <div class="qr-code">
+      <img src="assets/qrCode.png" alt="QR Code" />
+    </div>
+    <p class="result-message">Ein 10% Rabatt auf dein nächstes Essen im Restaurant "Zur Altweibermühle" im Park.</p>
+    <p class="email-prompt">Bitte gib deine E-Mail-Adresse ein, um den QR-Code zu erhalten:</p>
+    <input type="email" placeholder="Deine E-Mail-Adresse" class="email-input" />
+  </div>
+  

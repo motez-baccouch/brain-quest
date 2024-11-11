@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quizz1',
@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
 export class Quizz1Component {
   score = 0; 
   questionIndex = 0;
-
   questions = [
     {
       question: "1. Wie hoch ist die Mammuth-Achterbahn im Erlebnispark Tripsdrill?",
@@ -22,12 +21,14 @@ export class Quizz1Component {
     {
       question: "2. Welches Tierpark gehört zu Tripsdrill?",
       options: ['Serengeti-Park', 'Wildparadies', 'Tiergarten Nürnberg', 'Wilhelma'],
-      correctAnswer: 'Wilhelma'
+      correctAnswer: 'Wildparadies'
     }
   ];
 
   selectedOption: string | null = null;
   isCorrect: boolean | null = null;
+
+  constructor(private router: Router) {}
 
   selectOption(option: string) {
     this.selectedOption = option;
@@ -48,11 +49,17 @@ export class Quizz1Component {
       this.selectedOption = null;
       this.isCorrect = null;
     } else {
-      alert('Quiz completed! Your final score is: ' + this.score);
+      this.checkScore();
     }
   }
 
-  isSelected(option: string): boolean {
-    return this.selectedOption === option;
+  checkScore() {
+    if (this.score === 0) {
+     // this.router.navigate(['/better-luck-next-time']);
+    } else if (this.score > 0) {
+      this.router.navigate(['/spinning-wheel']); 
+    } else {
+      alert(`Quiz completed! Your final score is: ${this.score}`);
+    }
   }
 }

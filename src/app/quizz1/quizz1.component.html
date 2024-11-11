@@ -1,14 +1,33 @@
 <div class="quiz-score">
     <h2>Score: {{ score }}</h2>
   </div>
+  
 
-<div class="quiz-container">
-    <div class="quiz-image">
-      <img src="assets/mammut.jpg" alt="Quiz Image" />
+
+  <div class="quiz-container">
+
+     <!-- Image Container -->
+     <div class="quiz-image">
+        <img 
+      *ngIf="questionIndex === 0" 
+      src="assets/mammut.jpg" 
+      alt="Quiz Image for Question 1" 
+    />
+    <img 
+      *ngIf="questionIndex === 1" 
+      src="assets/zoo.jpg" 
+      alt="Quiz Image for Question 2" 
+    />
+      </div>
+    <!-- Question Container -->
+    <div class="quiz-question">
+      <h3>{{ questions[questionIndex].question }}</h3>
     </div>
   
-    <div class="quiz-content">
-      <h3>{{ questions[questionIndex].question }}</h3>
+   
+  
+    <!-- Options Container -->
+    <div class="quiz-options">
       <form>
         @for(option of questions[questionIndex].options ; track option){
         <div 
