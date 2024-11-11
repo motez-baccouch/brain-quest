@@ -39,7 +39,7 @@ export class Quizz1Component {
 
     setTimeout(() => {
       this.nextQuestion();
-    }, 1000); // Delay before going to the next question
+    }, 1000); 
   }
 
   nextQuestion() {
