@@ -1,0 +1,12 @@
+<div class="countdown">
+    <h2>Übrige Zeit: {{ formatTime(timeLeft) }}</h2>
+  </div>
+  <div class="container">
+    <div *ngFor="let team of leaderboard; let i = index" 
+         class="team" 
+         [ngStyle]="{'--i': i, '--color': team.color}">
+      <i class="fa-solid fa-{{ team.name }}"></i>
+      <span class="name">{{ team.name }}</span>
+      <span class="score">{{ team.score }}</span>
+    </div>
+  </div>

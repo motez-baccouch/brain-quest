@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+@media (max-width: 767px) {
+  canvas {
+    background-image: url('/assets/bg.png');
+    background-size: contain;  /* Prevent shrinking of the background */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

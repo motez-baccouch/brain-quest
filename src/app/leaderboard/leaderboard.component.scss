@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #f1f2f296;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Ensures score is pushed to the right */
+    width: 100%;
+    height: var(--team-height);
+    background: var(--color);
+    box-shadow: 0 3px 5px #0000001f;
+    border-radius: 10px;
+    padding: 0 10px;
+  }
+  
+  .name {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: capitalize;
+    flex: 1;  /* Allow name to take remaining space */
+  }
+  
+  .score {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .team i {
+    font-size: 1.8rem;
+    color: #fff;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+  
+    .team {
+      flex-direction: row;  /* Keep items in a row on smaller screens */
+      justify-content: space-between;  /* Ensure score is aligned to the right */
+    }
+  
+    .score {
+      margin-left: 10px; /* Adds space between name and score */
+    }
+  }
+  
+
+  .countdown{
+    font-weight: bold;
+  }

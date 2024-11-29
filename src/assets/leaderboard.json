@@ -1,0 +1,14 @@
+[
+    { "name": "Hans Müller", "score": 67, "color": "#66bb6a" },
+    { "name": "Greta Schmidt", "score": 55, "color": "#a1887f" },
+    { "name": "Klaus Fischer", "score": 45, "color": "#42a5f5" },
+    { "name": "Ingrid Becker", "score": 42, "color": "#ffa726" },
+    { "name": "Johann Krause", "score": 10, "color": "#ef5350" },
+    { "name": "Lena Weber", "score": 63, "color": "#ff7043" },
+    { "name": "Maximilian Schulz", "score": 82, "color": "#ab47bc" },
+    { "name": "Erika Meyer", "score": 51, "color": "#29b6f6" },
+    { "name": "Michael Braun", "score": 72, "color": "#7e57c2" },
+    { "name": "Anna Müller", "score": 58, "color": "#f06292" },
+    { "name": "Jens Hoffmann", "score": 66, "color": "#00bcd4" },
+    { "name": "Sophie Lang", "score": 59, "color": "#8d6e63" }
+]
